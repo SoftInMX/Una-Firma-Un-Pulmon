@@ -1,0 +1,29 @@
+/* TEAM */
+	
+	CEO: Lic. Patricia Mondragón Celis
+	Contact: paty [at] respirandoconvalor.org
+	From: Col. Del Valle, México, D.F
+
+	CTO: Dr. Ángel Daniel Mendoza Posada
+	Contact: angel [at] respirandoconvalor.org
+	From: Col. Del Valle, México, D.F
+
+	Coordinadora Institucional: Lic. Fanny Romero Moreno
+	Contact: fanny [at] respirandoconvalor.org
+	From: Col. Del Valle, México, D.F
+
+	Afiliación: Mtra. Ana Leticia Becerra Gálvez
+	Contact: ana [at] respirandoconvalor.org
+	From: Col. Del Valle, México, D.F
+
+	TI: Juan Francisco Herrera
+	Contact: fherrera [at] softin.mx
+	Twitter: @jok3rcit0
+	From: México, D.F
+
+/* SITE */
+	Last update: 2014/11/10
+	Language: Español
+	Doctype: HTML5
+	Components: jQuery
+	IDE: Sublime Text
