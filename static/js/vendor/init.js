@@ -323,7 +323,7 @@ if (jQuery.isFunction(jQuery.fn.owlCarousel)) {
 
 // --------- 14. GOOGLE MAPS ----------  //
 
-if (document.getElementById('qcContactMap')) {
+/*if (document.getElementById('qcContactMap')) {
 	var myLatlng = new google.maps.LatLng($('#qcMapAddress').attr('data-lat'),$('#qcMapAddress').attr('data-lng'));
 	var mapOptions = {
 		zoom: 15,
@@ -350,7 +350,7 @@ if (document.getElementById('qcContactMap')) {
 		infowindow.open(map,marker);
 	});
 	
-	/* RESIZE MAP ON TAB CHANGE */
+	/* RESIZE MAP ON TAB CHANGE 
 	$('#qcTabNav li').click(function() {
 		if($('#qcContactMap').is(':visible')) {
 			google.maps.event.trigger(map, 'resize');
@@ -358,7 +358,7 @@ if (document.getElementById('qcContactMap')) {
 		}
 	});
 }
-
+*/
 
 // --------------------  //
 

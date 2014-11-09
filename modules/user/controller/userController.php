@@ -12,5 +12,9 @@
 			$this->user->show($view);
 		}
 
+		public function acerca(){
+			$this->user->show('about');
+		}
+
 	}
 ?>
