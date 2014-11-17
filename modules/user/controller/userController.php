@@ -16,5 +16,9 @@
 			$this->user->show('about');
 		}
 
+		public function firmar(){
+			$this->user->show('firmar');
+		}
+
 	}
 ?>
