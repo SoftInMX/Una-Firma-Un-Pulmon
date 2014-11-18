@@ -20,6 +20,9 @@
 				}elseif ($view == 'about') {
 					$activo_index = 'active';
 					$active = 'normal';
+				}elseif ($view == 'firmar') {
+					$activo_index = 'normal';
+					$active = 'active';
 				}
 				$template = file_get_contents(TEMPLATE);
 				$content = array(
