@@ -17,7 +17,7 @@
 		}
 
 		public function firmar(){
-			$this->user->show('firmar');
+			$this->user->firmar();
 		}
 
 	}

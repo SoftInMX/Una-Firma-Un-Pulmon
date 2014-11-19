@@ -15,5 +15,9 @@
 		public function show($view){
 			$this->view->show($view);
 		}
+
+		public function firmar(){
+			$estados = $this->userDAO->getEstados();
+		}
 	}
 ?>
