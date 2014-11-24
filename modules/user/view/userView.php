@@ -37,5 +37,22 @@
 				header("Location: /404.html");
 			}
 		}
+
+		function showFirmar($estados=array()){
+			$html = $this->path . 'firmar.html';
+			$template = file_get_contents(TEMPLATE);
+			if(is_file($html)){
+				$content = array(
+					'{TITLE}' => 'Un Firma Un Pulmón | Firmar Propuesta',
+					'{CONTENIDO}' => file_get_contents($html),
+					'{ESTADOS}' => $estados,
+					'{ACTIVE_INDEX}' => 'normal',
+					'{ACTIVE_FIRMA}' => 'active'
+				);
+				echo $html = str_replace(array_keys($content), array_values($content), $template);
+			}else{
+				header("Location: /404.html");
+			}
+		}
 	}
 ?>

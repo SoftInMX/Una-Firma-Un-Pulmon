@@ -215,38 +215,61 @@ $('.qcForm').submit(function() {
 		$(this).find('.requiredField').each(function() {
 			if($.trim($(this).val()) == '') {
 				var labelText = $(this).prev( 'label').text();
-				$(this).parent().append( '<span class="error">Please enter '+labelText+'</span>' );
+				$(this).parent().append( '<span class="error">El campo '+labelText+' es necesario</span>' );
 				$(this).parent().addClass( 'inputError' );
 				hasError = true;
 			} else if($(this).hasClass( 'email')) {
 				var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
 				if(!emailReg.test($.trim($(this).val()))) {
 					var labelText = $(this).prev( 'label').text();
-					$(this).parent().append( '<span class="error">You have entered an invalid '+labelText+'</span>' );
+					$(this).parent().append( '<span class="error">Ingresa un correo valido </span>' );
 					$(this).parent().addClass( 'inputError' );
 					hasError = true;
 				}
 			} else if($(this).hasClass('checkbox')) {
 				if(!$(this).is(':checked')) {
-					$(this).parent().append( '<span class="error">You must agree to the Terms & Conditions</span>' );
+					$(this).parent().append( '<span class="error">Debes aceptar los términos y condiciones.</span>' );
 					$(this).parent().addClass( 'inputError' );
 					hasError = true;
 				}
 			} else if($(this).hasClass( 'captcha')) {
 				if($(this).val() != 'red' && $(this).val() != 'Red') {
-					$(this).parent().append( '<span class="error">You have entered wrong Captcha Value</span>' );
+					$(this).parent().append( '<span class="error">Ingresaste un captcha incorrecto</span>' );
 					$(this).parent().addClass( 'inputError' );
 					hasError = true;
 				}
 			}
 		});
 		if(!hasError) {
-			var formInput = $(this).serialize();
-			var hideForm = $(this);
-			$.post($(this).attr('action'),formInput, function(data){
-				$(hideForm).slideUp( "fast", function() {				   
-					$(this).before( '<br/><p class="info">Thanks! Your email was successfully sent.</p>' );
-				});
+			var name 	= $("#first_name").val();
+			var sname 	= $("#last_name").val();
+			var email 	= $("#email").val();
+			var state 	= $("#state").val();
+			var city	= $("#city").val();
+			var address = $("#address").val();
+			var zipcode = $("#postal_code").val();
+			console.log(state);
+			$.ajax({
+				type: 'POST',
+				url : '/user/firma',
+				data: {
+					name:name,
+					sname:sname,
+					email:email,
+					state:state,
+					city:city,
+					address:address,
+					zipcode:zipcode
+				}.done(function(res){
+					console.log(res);
+					//var formInput = $(this).serialize();
+					//var hideForm = $(this);
+					/*$.post($(this).attr('action'),formInput, function(data){
+						$(hideForm).slideUp( "fast", function() {
+						$(this).before( '<br/><p class="info">Gracias! Tu firma ha sido sumada. Ahora estamos más cerca de esta meta, sin embargo siempre es posible seguir apoyando. Puedes difundir esta causa [btn_share_facebook], [btn_share_twitter], también puedes hacer una donación altruista [donación_tab].<br /><a href="/user/donar">Más información sobre la donación</a></p>' );
+						});
+					});*/
+				})
 			});
 		}
 		return false;

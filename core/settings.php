@@ -9,7 +9,7 @@
 	const HTML = 'static/';
 	const WEB_RAIZ = '/';
 	const TEMPLATE = 'static/template.html';
-	const PRODUCCION = false;
+	const PRODUCCION = true;
 	
 	if(PRODUCCION) {
 		ini_set('display_errors', '0');

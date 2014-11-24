@@ -41,9 +41,7 @@
 										<h1>Petición</h1>
 										<p>#UnaFirmaUnPulmón</p>
 									</div>
-
-									<!-- ## TICKET FORM ## -->
-									<form action="includes/form/qcForm.php" id="qcTcktForm" class="qcForm" name="qcTcktForm" method="post">
+									<form  id="qcTcktForm" class="qcForm" name="qcTcktForm" method="post">
 										<ul class="clearfix">
 											<li>
 												<div class="wrapper">
@@ -65,13 +63,13 @@
 											</li>
 											<li>
 												<div class="wrapper herr">
-													<label for="city">Estado | Ciudad</label>
-													<select name="city" id="city" class="requiredField">
+													<label for="state">Estado | Ciudad</label>
+													<select name="state" id="state" class="requiredField" onchange="changeMunicipio(this,'city')">
 														<option value="">Seleciona tu Estado</option>
 														{ESTADOS}
 													</select>
 													<select name="city" id="city" class="requiredField">
-														<option value="">Ciudad</option>
+														<option value="-1">Ciudad</option>
 														{CIUDADES}
 													</select>
 												</div>
